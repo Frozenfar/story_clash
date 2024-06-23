@@ -1,6 +1,6 @@
 ## Code Challenge for Story Clash
 
-Hi!
+Hi!\
 My name is Rahi and this is my solution for the code challenge from Story Clash. the PDF of this task should be in this repo as well :)
 
 A short summary of what this code is:
@@ -24,8 +24,17 @@ Here is a guide to start the project:
 4. run command : ./vendor/bin/sail build
 5. run command : (optional with -d at the end)  ./vendor/bin/sail up
 6. run command : ./vendor/bin/sail artisan migrate --seed
-- That's it you are ready to test and use the app!
-- run command this command if you use -d to shut down the code :  ./vendor/bin/sail down (if you want with -v)
+<br /> 
+
+That's it you are ready to test and use the app! Now some tips:
+- run command this command if you use -d to shut down the code :  
+./vendor/bin/sail down (if you want with -v)
+- I have added phpMyAdmin to the docker-compose as well for easier debug, its on localhost:8080 and the user and pass is the same as the .env
+- for some reason if you might have a problem with first migration (only happend to me once and idk why) if there was an error after step 6 and said something like:<br />  "Integrity constraint violation: 1062 Duplicate entry" <br /> 
+ run this command:  ./vendor/bin/sail artisan migrate:refresh --seed
+- final note since this Laravel is running on sail you need to interact with it like this:\
+ "./vendor/bin/sail" instead of "php" for example:\
+  ./vendor/bin/sail artisan copy 123
 
 Just remember to create and modify the .env file as explained :)
 
